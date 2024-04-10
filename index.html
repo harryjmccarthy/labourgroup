@@ -37,7 +37,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[53.56816066195986,-2.2646792816563996],[53.75382272997219,-1.7204114751916408]]);
+        }).fitBounds([[53.53151426714279,-2.0516435876498504],[53.71785477983144,-1.5078455064076082]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -78,6 +78,7 @@
             maxNativeZoom: 19
         });
         layer_OpenStreetMap_0;
+        map.addLayer(layer_OpenStreetMap_0);
         function pop_polling_districts_England_region_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -219,6 +220,9 @@
         bounds_group.addLayer(layer_DraftBoundaries_3);
         function pop_LabourGroupProposalcopy_4(feature, layer) {
             var popupContent = '<table>\
+                    <tr>\
+                        <td class="visible-with-data" id="Ward"colspan="2"><strong>Proposed Ward</strong><br />' + (feature.properties['Ward'] !== null ? autolinker.link(feature.properties['Ward'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <th scope="row">group_prop</th>\
                         <td>' + (feature.properties['group_prop'] !== null ? autolinker.link(feature.properties['group_prop'].toLocaleString()) : '') + '</td>\
