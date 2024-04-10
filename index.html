@@ -163,7 +163,7 @@
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_OldBoundaries_2');
@@ -171,7 +171,7 @@
         map.getPane('pane_OldBoundaries_2').style['mix-blend-mode'] = 'normal';
         var layer_OldBoundaries_2 = new L.geoJson(json_OldBoundaries_2, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_OldBoundaries_2',
             layerName: 'layer_OldBoundaries_2',
             pane: 'pane_OldBoundaries_2',
@@ -202,7 +202,7 @@
                 lineJoin: 'bevel',
                 weight: 4.0,
                 fillOpacity: 0,
-                interactive: true,
+                interactive: false,
             }
         }
         map.createPane('pane_DraftBoundaries_3');
@@ -210,7 +210,7 @@
         map.getPane('pane_DraftBoundaries_3').style['mix-blend-mode'] = 'normal';
         var layer_DraftBoundaries_3 = new L.geoJson(json_DraftBoundaries_3, {
             attribution: '',
-            interactive: true,
+            interactive: false,
             dataVar: 'json_DraftBoundaries_3',
             layerName: 'layer_DraftBoundaries_3',
             pane: 'pane_DraftBoundaries_3',
@@ -220,9 +220,6 @@
         bounds_group.addLayer(layer_DraftBoundaries_3);
         function pop_LabourGroupProposalcopy_4(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td class="visible-with-data" id="Ward"colspan="2"><strong>Proposed Ward</strong><br />' + (feature.properties['Ward'] !== null ? autolinker.link(feature.properties['Ward'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">group_prop</th>\
                         <td>' + (feature.properties['group_prop'] !== null ? autolinker.link(feature.properties['group_prop'].toLocaleString()) : '') + '</td>\
